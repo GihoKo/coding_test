@@ -54,3 +54,39 @@
     -   map, filter, reduce
 
 ### 4. 몸풀기 문제
+
+1. 배열 정렬하기
+
+```flow
+function solution(arr) {
+    arr.sort((a, b) => a - b);
+    return arr;
+}
+
+console.log(solution([1, -5, 2, 4, 3]));
+console.log(solution([2, 1, 1, 3, 2, 5, 4]));
+console.log(solution([6, 1, 7]));
+```
+
+-   제약 조건 주의 깊게 보기
+-   sort() 메서드
+    -   아무런 조건을 전달하지 않는 경우 데이터가 문자열이라 가정하고 정렬한다.
+    -   콜백함수
+        -   음수를 반환하면 첫 번째 인자가 두 번째 인자보다 앞에 나온다.
+        -   양수를 반환하면 두 번째 인자가 첫 번째 인자보다 앞에 나온다.
+        -   0을 반환하면 위치를 변경하지 않는다.
+
+1. 배열 제어하기
+
+```flow
+function solution(arr) {
+    const UniqueArr = [...new Set(arr)];
+    UniqueArr.sort((a, b) => b - a);
+    return UniqueArr;
+}
+
+console.log(solution([4, 2, 2, 1, 3, 4]));
+console.log(solution([2, 1, 1, 3, 2, 5, 4]));
+```
+
+-   Set으로 중복 요소 제거 가능
